@@ -3,7 +3,11 @@ import './Hero.css'
 import profile_img from '../../assets/profile.png'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 
+import { useTranslation } from "react-i18next";
+
 const Hero = () => {
+
+  const { t } = useTranslation();
 
   const handleDownload = () => {
     const link = document.createElement("a");
@@ -15,12 +19,12 @@ const Hero = () => {
   return (
     <div id='home' className='hero'>
         <img src={profile_img} alt="" />
-        <h1><span>Soy Elio Valenzuela, </span> desarrollador de videojuegos radicado en Chile</h1>
-        <p>Enfocado en la programación, con más de 8 años de experiencia en diversos lenguajes y motores de desarrollo.</p>
+        <h1><span>{t("Hero_Me")}</span> {t("Hero_Me2")}</h1>
+        <p>{t("Hero_para")}</p>
         <div className="hero-action">
 
-            <div className="hero-connect"><AnchorLink className='anchor-link' offset={50} href='#contact'>Contactame</AnchorLink></div>
-            <div onClick={handleDownload} className="hero-resume">Mi Curriculm</div>
+            <div className="hero-connect"><AnchorLink className='anchor-link' offset={50} href='#contact'>{t("NavBar_ContactMe")}</AnchorLink></div>
+            <div onClick={handleDownload} className="hero-resume">{t("Hero_cv")}</div>
 
         </div>
 

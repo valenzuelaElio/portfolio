@@ -6,7 +6,11 @@ import location_icon from '../../assets/location_icon.svg'
 import call_icon from '../../assets/call_icon.svg'
 import { useState } from 'react';
 
+import { useTranslation } from "react-i18next";
+
 const Contact = () => {
+
+    const { t } = useTranslation();
 
     const [result, setResult] = useState("");
 
@@ -15,28 +19,28 @@ const Contact = () => {
         const formData = new FormData(event.target);
         formData.append("access_key", "92f1fdfa-cd31-4ada-9e5a-e40f6428555b");
 
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData
-    });
+        const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            body: formData
+        });
 
-    const data = await response.json();
-    setResult(data.success ? "Success!" : "Error");
-    if(data.success){
-        alert(data.message);
-    }
-  };
+        const data = await response.json();
+            setResult(data.success ? "Enviado" : "Error");
+            if(data.success){
+                alert(data.message);
+            }
+    };
 
   return (
     <div id='contact' className='contact'>
         <div className="contact-title">
-            <h1>Contactame</h1>
+            <h1>{t("NavBar_ContactMe")}</h1>
             <img src={theme_pattern} alt="" />
         </div>
         <div className="contact-section">
             <div className="contact-left">
-                <h1>Hablemos</h1>
-                <p>En este momento estoy disponible para integrarme a nuevos proyectos. Busco participar en equipos creativos donde pueda contribuir con mis conocimientos en desarrollo y diseño de videojuegos.</p>
+                <h1>{t("contact_talk")}</h1>
+                <p>{t("contact_status")}</p>
                 <div className="contact-details">
                     <div className="contact-detail">
                         <img src={mail_icon} alt="" /> <p>valenzuela.eliogd@gmail.com</p>
@@ -50,13 +54,13 @@ const Contact = () => {
                 </div>
             </div>
             <form onSubmit={onSubmit} className='contact-right'>
-                <label htmlFor="">Tu nombre</label>
-                <input type="text" placeholder='Ingresa tu nombre' name='name'/>
-                <label htmlFor="">Tu Email</label>
-                <input type="text" placeholder='Ingresa tu Email' name='name'/>
-                <label htmlFor="">Escribe aqui tu mensaje</label>
-                <textarea name="message"rows="8" placeholderid="Ingresa tu mensaje aqui"></textarea>
-                <button type='submit' className='contact-submit'>Enviar</button>
+                <label htmlFor="">{t("contact_name")}</label>
+                <input type="text" placeholder={t("contact_name_placeholder")} name='name'/>
+                <label htmlFor="">{t("contact_email")}</label>
+                <input type="text" placeholder={t("contact_email_placeholder")} name='name'/>
+                <label htmlFor="">{t("contact_text")}</label>
+                <textarea name="message"rows="8" placeholderid={t("contact_text_placeholder")}></textarea>
+                <button type='submit' className='contact-submit'>{t("contact_send")}</button>
             </form>
         </div>
     </div>

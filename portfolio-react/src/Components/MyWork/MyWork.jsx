@@ -4,7 +4,11 @@ import theme_pattern from '../../assets/theme_pattern.svg'
 import mywork_data from '../../assets/mywork_data.js'
 import arrow_icon from '../../assets/arrow_icon.svg'
 
+import { useTranslation } from "react-i18next";
+
 const MyWork = () => {
+
+    const { t } = useTranslation();
 
     const [visibleCount, setVisibleCount] = useState(9) // cantidad inicial de imágenes
 
@@ -20,7 +24,7 @@ const MyWork = () => {
  return (
     <div id='work' className='mywork'>
       <div className="mywork-title">
-        <h1>Trabajos más recientes</h1>
+        <h1>{t("NavBar_Work")}</h1>
         <img src={theme_pattern} alt=''/>
       </div>
 
@@ -32,7 +36,7 @@ const MyWork = () => {
 
       {mywork_data.length > 9 && (
         <div className="mywork-showmore" onClick={handleShowMore}>
-          <p>{visibleCount < mywork_data.length ? 'Mostrar más' : 'Mostrar menos'}</p>
+          <p>{visibleCount < mywork_data.length ? t("work_more") : t("work_less") }</p>
           <img 
             src={arrow_icon} 
             alt="" 

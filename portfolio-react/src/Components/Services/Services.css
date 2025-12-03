@@ -79,18 +79,18 @@
         font-size: 50px;
     }
     .services-title img{
-        width: 130px;
-        margin-right: -20px;
+        width: 200px;
+        margin-right: -10px;
     }
     .services-format{
         gap: 20px;
         padding: 32px;
     }
     .services-format h2{
-        font-size: 28px;
+        font-size: 24px;
     }
     .services-format p{
-        font-size: 18px;
+        font-size: 17px;
         line-height: 32px;
         max-width: 300px;
     }
@@ -98,7 +98,7 @@
         width: 20px;
     }
     .services-container{
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         gap: 30px;
     }
 }

@@ -71,4 +71,9 @@
         flex-direction: column-reverse;
         margin-bottom: 50px;
     }
+    .footer-bottom-right{
+        font-size: 15px;
+        gap: 40px;
+
+    }
 }

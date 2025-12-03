@@ -1,0 +1,48 @@
+{
+    "NavBar_Home": "Home",
+    "NavBar_About": "Sobre mi",
+    "NavBar_Services": "Servicios", 
+    "NavBar_Work": "Portfolio",
+    "NavBar_Contact": "Contacto",
+    "NavBar_ContactMe": "Contactame",
+
+    "Hero_Me": "Soy Elio Valenzuela, ",
+    "Hero_Me2": "desarrollador de videojuegos radicado en Chile",
+    "Hero_para": "Enfocado en la programación, con más de 8 años de experiencia en diversos lenguajes y motores de desarrollo.",
+    "Hero_cv": "Curriculm",
+
+    "AboutMe_resume" : "Poseo un perfil versátil, fruto de más de una década de participación en una amplia variedad de proyectos y trabajos. He colaborado en desarrollos contemporáneos como Tormented Souls 2, el aclamado juego de survival horror chileno.",
+    "AboutMe_resume2" : "Mi pasión reside en la búsqueda constante de conocimiento que me permita mejorar en los distintos ámbitos de mi trabajo.",
+    "AboutMe_ach1" : "AÑOS DE EXPERIENCIA",
+    "AboutMe_ach2" : "AÑOS EN LA INDUSTRIA CHILENA",
+    "AboutMe_ach3" : "PROYECTOS COMERCIALES E INDEPENDIENTES",
+
+    "service_01_name" : "Desarrollo de gameplay",
+    "service_01_desc" : "Diseño e implemento sistemas de gameplay complejos en Unreal Engine 5 (C++ y Blueprints).",
+    "service_02_name" : "Herramientas de desarrollo",
+    "service_02_desc" : "Desarrollo herramientas personalizadas para equipos de diseño y arte, integradas al editor de Unreal.",
+    "service_03_name" : "Optimización y Debugging",
+    "service_03_desc" : "Identifico y resuelvo cuellos de botella en rendimiento, carga o memoria, aplicando técnicas de profiling y refactorización.",
+    "service_04_name" : "Consultoría Técnica y Asesoría de Producción",
+    "service_04_desc" : "Asesoro equipos en estructuración de proyectos, control de versiones, pipelines técnicos y buenas prácticas en Unreal Engine.",
+    "service_05_name" : "Prototipado",
+    "service_05_desc" : "Desarrollo de prototipos funcionales en Unreal Engine 5 para validar ideas de gameplay, sistemas o narrativa de forma ágil y eficiente.",
+
+    "work_more" : "Más",
+    "work_less" : "Menos",
+
+    "contact_talk" : "Hablemos",
+    "contact_status" : "En este momento estoy disponible para integrarme a nuevos proyectos. Busco participar en equipos creativos donde pueda contribuir con mis conocimientos en desarrollo y diseño de videojuegos.",
+    "contact_name" : "Tu nombre",
+    "contact_email" : "Tu Email",
+    "contact_text" : "Escribe aqui tu mensaje",
+    "contact_name_placeholder" : "Ingresa tu nombre",
+    "contact_email_placeholder" : "Ingresa tu Email",
+    "contact_text_placeholder" : "Ingresa tu mensaje aqui",
+    "contact_send" : "Enviar",
+
+    "footer_resume" : "Programador con más de 5 años de experiencia en la industria de videojuegos chilena, especializado en crear experiencias interactivas y sistemas eficientes.",
+    "footer_tos" : "Terminos de servicios",
+    "footer_pp" : "Politica de privacidad"
+
+}

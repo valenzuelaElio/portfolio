@@ -1,0 +1,48 @@
+{
+    "NavBar_Home": "Home",
+    "NavBar_About": "About Me",
+    "NavBar_Services": "Services",
+    "NavBar_Work": "Portfolio",
+    "NavBar_Contact": "Contact",
+    "NavBar_ContactMe": "Contact Me",
+
+    "Hero_Me": "I'm Elio Valenzuela, ",
+    "Hero_Me2": "video game developer based in Chile",
+    "Hero_para": "Focused on programming, with over 8 years of experience in various languages ​​and development engines.",
+    "Hero_cv": "Curriculm",
+
+    "AboutMe_resume" : "I have a versatile profile, the result of over a decade of involvement in a wide variety of projects and jobs. I have collaborated on contemporary developments such as Tormented Souls 2, the acclaimed Chilean survival horror game.",
+    "AboutMe_resume2" : "My passion lies in the constant search for knowledge that allows me to improve in the different areas of my work.",
+    "AboutMe_ach1" : "YEARS OF EXPERIENCE",
+    "AboutMe_ach2" : "YEARS IN THE CHILEAN INDUSTRY",
+    "AboutMe_ach3" : "COMMERCIAL AND INDEPENDENT PROJECTS",
+
+    "service_01_name" : "Gameplay development",
+    "service_01_desc" : "I design and implement complex gameplay systems in Unreal Engine 5 (C++ and Blueprints).",
+    "service_02_name" : "Development Tools",
+    "service_02_desc" : "I develop custom tools for design and art teams, integrated into the Unreal editor.",
+    "service_03_name" : "Optimization and Debugging",
+    "service_03_desc" : "I identify and resolve bottlenecks in performance, load, or memory by applying profiling and refactoring techniques.",
+    "service_04_name" : "Technical Consulting and Production Advisory Services",
+    "service_04_desc" : "I advise teams on project structuring, version control, technical pipelines, and best practices in Unreal Engine.",
+    "service_05_name" : "Prototyping",
+    "service_05_desc" : "Development of functional prototypes in Unreal Engine 5 to validate gameplay, systems or narrative ideas in an agile and efficient manner.",
+
+    "work_more" : "More",
+    "work_less" : "Less",
+
+    "contact_talk" : "Let's talk",
+    "contact_status" : "I am currently available to join new projects. I am looking to participate in creative teams where I can contribute my knowledge of video game development and design.",
+    "contact_name" : "Your name",
+    "contact_email" : "Your Email",
+    "contact_text" : "Write here",
+    "contact_name_placeholder" : "Enter your nombre",
+    "contact_email_placeholder" : "Enter your Email",
+    "contact_text_placeholder" : "Write here",
+    "contact_send" : "Send",
+
+    "footer_resume" : "Programmer with more than 5 years of experience in the Chilean video game industry, specializing in creating interactive experiences and efficient systems.",
+    "footer_tos" : "Terms of services",
+    "footer_pp" : "Privacy Policy"
+
+}

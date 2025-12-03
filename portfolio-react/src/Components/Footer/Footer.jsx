@@ -3,6 +3,8 @@ import "./Footer.css"
 import footer_logo from '../../assets/logo.svg'
 import user_icon from '../../assets/user_icon.svg'
 
+import { useTranslation } from "react-i18next";
+
 /*
 <div className='footer-top-right'>
   <div className="footer-email-input">
@@ -15,12 +17,15 @@ import user_icon from '../../assets/user_icon.svg'
 </div>
 */
 const Footer = () => {
+
+  const { t } = useTranslation();
+
   return (
     <div className='footer'>
         <div className='footer-top'>
             <div className='footer-top-left'>
                 <img src={footer_logo} alt="" />
-                <p>Programador con más de 5 años de experiencia en la industria de videojuegos chilena, especializado en crear experiencias interactivas y sistemas eficientes.</p>
+                <p>{t("footer_resume")}</p>
             </div>
             
         </div>
@@ -30,9 +35,8 @@ const Footer = () => {
               © 2025 Elio Valenzuela. All rights reserved.
               </p>
               <div className='footer-bottom-right'>
-                <p>Terminos de servicios</p>
-                <p>Politica de privacidad</p>
-                <p>Contactame</p>
+                <p>{t("footer_tos")}</p>
+                <p>{t("footer_pp")}</p>
               </div>
             </div>
     </div>

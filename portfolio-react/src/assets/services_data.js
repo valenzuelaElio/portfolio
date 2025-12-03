@@ -6,12 +6,12 @@ const Services_Data = [
     },
     {
         s_no:"02",
-        s_name:"Programación de Herramientas Internas",
+        s_name:"Herramientas para desarrollo",
         s_desc:"Desarrollo herramientas personalizadas para equipos de diseño y arte, integradas al editor de Unreal."
     },
     {
         s_no:"03",
-        s_name:"Optimización y Debugging Avanzado",
+        s_name:"Optimización y Debugging",
         s_desc:"Identifico y resuelvo cuellos de botella en rendimiento, carga o memoria, aplicando técnicas de profiling y refactorización."
     },
     {

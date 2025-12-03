@@ -1,0 +1,45 @@
+.lang-switcher {
+  width: 100%;
+  display: flex;
+  padding-bottom: 15px;
+  gap: 10px;
+  align-items: center;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1%;
+}
+
+/* Botón base */
+.lang-btn {
+  padding: 20px 40px;
+  border-radius: 50px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.2s;
+  font-family: Outfit;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  max-width: 2px;
+  max-height: 2px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hover */
+.lang-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 6px rgba(0,0,0,0.25);
+}
+
+/* Inglés - colores azul y rojo */
+.lang-btn.en {
+  background: linear-gradient(135deg, #00247d 36%, #cf142b 102.06%);
+}
+
+/* Español - colores rojo y amarillo */
+.lang-btn.es {
+    background: linear-gradient(135deg, #aa151b 36%, #f1bf00 102.06%);
+}
