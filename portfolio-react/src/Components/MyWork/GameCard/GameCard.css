@@ -1,0 +1,132 @@
+
+.game-card-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* Sombra fija detrás */
+.game-card-shadow {
+  position: absolute;
+  inset: 0;
+  background-color: #D9D9D9;
+}
+
+/* Card que se desplaza */
+.game-card {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: #D9D9D9;
+
+  transform: translate(0, 0);
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+.game-card-wrapper:hover .game-card {
+  transform: translate(8px, -8px);
+  background-color: #6A5351;
+}
+
+.game-card-wrapper:hover .game-card-title,
+.game-card-wrapper:hover .game-card-date,
+.game-card-wrapper:hover .game-card-description,
+.game-card-wrapper:hover .game-card-platforms {
+  color: #D9D9D9;
+}
+
+/* Elevación */
+.game-card:hover {
+  transform: translate(8px, -8px);
+  z-index: 2;
+}
+
+.game-card-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border: none;
+  border-radius: 0;
+}
+
+
+.game-card-gallery {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.game-card-gallery-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.35s ease-out;
+}
+
+.game-card-gallery-image {
+  display: block;
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.game-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px; /* Menor separación entre secciones */
+  padding: 24px;
+  text-align: center;
+}
+
+/* Líneas divisorias entre secciones */
+.game-card-title,
+.game-card-date,
+.game-card-description,
+.game-card-platforms {
+  width: 100%;
+}
+
+/* Título centrado */
+.game-card-title {
+  width: 100%;
+  margin: 0;
+  padding-bottom: 12px;
+  text-align: center;
+  border-bottom: 1.5px solid #847977;
+}
+
+/* Fecha centrada */
+.game-card-date {
+  width: 100%;
+  margin: 0;
+  padding-bottom: 12px;
+  text-align: center;
+  border-bottom: 1.5px solid #847977;
+}
+
+/* Descripción centrada */
+.game-card-description {
+  width: 100%;
+  margin: 0;
+  padding: 12px 20px;
+  text-align: center;
+  border-bottom: 1.5px solid #847977;
+  line-height: 1.6;
+  box-sizing: border-box;
+}
+
+/* Plataformas más cerca de la línea */
+.game-card-platforms {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  width: 100%;
+  padding-top: 10px;
+}

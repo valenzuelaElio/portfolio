@@ -1,0 +1,61 @@
+
+.crt-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Líneas horizontales de monitor CRT */
+.crt-scanlines {
+  position: absolute;
+  inset: 0;
+
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 3px,
+    rgba(0, 0, 0, 0.12) 4px
+  );
+
+  opacity: 0.45;
+}
+
+/* Oscurecimiento suave en los bordes */
+.crt-vignette {
+  position: absolute;
+  inset: 0;
+
+  background: radial-gradient(
+    ellipse at center,
+    transparent 48%,
+    rgba(0, 0, 0, 0.12) 72%,
+    rgba(0, 0, 0, 0.38) 100%
+  );
+}
+
+/* Ligero cambio de luminosidad, como un monitor antiguo */
+.crt-flicker {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.015);
+
+  animation: crt-flicker 5s infinite;
+}
+
+@keyframes crt-flicker {
+  0%, 100% { opacity: 0.15; }
+  48% { opacity: 0.15; }
+  50% { opacity: 0.35; }
+  52% { opacity: 0.15; }
+  80% { opacity: 0.2; }
+  82% { opacity: 0.15; }
+}
+
+/* Reduce el movimiento si el usuario lo ha solicitado */
+@media (prefers-reduced-motion: reduce) {
+  .crt-flicker {
+    animation: none;
+  }
+}

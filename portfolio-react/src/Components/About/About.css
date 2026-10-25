@@ -1,148 +1,219 @@
-.about{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 80px;
-    margin: 80px 170px;
-}
-.about-title{
-    position: relative;
-}
-.about-title h1{
-    padding: 0px 30px;
-    font-size: 80px;
-    font-weight: 600;
-}
-.about-title img{
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    z-index: -1;
-}
-.about-sections{
-    display: flex;
-    gap: 80px;
-}
-.about-right{
-    display: flex;
-    flex-direction: column;
-    gap: 80px;
-}
-.about-para{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    font-size: 24px;
-    font-weight: 500;
-}
-.about-skills{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-.about-skill{
-    display: flex;
-    gap: 50px;
-    align-items: center;
-    transition: 0.3s;
-}
-.about-skill p{
-    min-width: 220px;
-    font-size: 24px;
-    font-weight: 500;
-}
-.about-skill hr{
-    outline: none;
-    border: none;
-    width: 50%;
-    height: 8px;
-    border-radius: 50px;
-    background: linear-gradient(270deg, #2AF598 10%, #08B3E5 100%);
-}
-.about-achievements{
-    display: flex;
-    width: 100%;
-    justify-content: space-around;
-    margin-bottom: 80px;
-}
-.about-achievement{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    transition: 0.5s;
-}
-.about-achievement h1{
-    font-size: 60px;
-    font-weight: 700;
-    background: linear-gradient(270deg, #2AF598 10%, #08B3E5 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-.about-achievement p{
-    font-size: 22px;
-    font-weight: 500;
-}
-.about-skill:hover{
-    transform: scale(1.05);
-    transition: 0.3s;
-}
-.about-achievement:hover{
-    transform: scale(1.12);
-    transition: 0.5s;
-}
-@media(max-width:768px){
-    .about{
-        gap: 80px;
-        margin: 50px 70px;
-        align-items: start;
-    }
-    .about-title h1{
-        font-size: 50px;
-        padding: 0;
-    }
-    .about-title img{
-        width: 200px;
-        right: -20px;
-    }
-    .about-sections{
-        flex-direction: column;
-    }
-    .about-left{
-        display: none;
-    }
-    .about-para{
-        font-size: 18px;
-        line-height: 32px;
-    }
-    .about-skill{
-        display: contents;
-        gap: 20px;
-        align-items: center;
-    }
-    .about-skill p{
-        font-size: 20px;
-    }
-    .about-skill hr{
-        height: 6px;
-    }
-    .about-achievements{
-        justify-content: space-between;
-            width: 120%;
-           
-    }
-    .about-achievement{
-        gap: 10px;
-    }
-    .about-achievement h1{
-        font-size: 30px;
-        font-weight: 00;
-    }
-    .about-achievement p{
-        text-align: center;
-        font-size: 12px;
-    }
 
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+  margin: 80px 0;
+}
+
+.about-title h1 {
+  margin: 0;
+  font-size: 80px;
+  font-weight: 600;
+
+  color: #D9D9D9;
+  text-align: center;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-auto-rows: minmax(130px, auto);
+  gap: 20px;
+  align-items: stretch;
+}
+
+.about-tile-wrapper {
+  position: relative;
+  min-width: 0;
+  min-height: 130px;
+}
+
+.about-tile-shadow {
+  position: absolute;
+  inset: 0;
+  background-color: #D9D9D9;
+}
+
+.about-tile {
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+
+  padding: 24px;
+  border: none;
+  border-radius: 0;
+
+  background-color: #D9D9D9;
+  color: #6A5351;
+  text-decoration: none;
+
+  transform: translate(0, 0);
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+.about-tile-wrapper:hover .about-tile {
+  transform: translate(8px, -8px);
+  background-color: #6A5351;
+  color: #D9D9D9;
+}
+
+/* Textos al pasar el cursor */
+.about-tile-wrapper:hover .about-tile,
+.about-tile-wrapper:hover .about-tile h2,
+.about-tile-wrapper:hover .about-tile h3,
+.about-tile-wrapper:hover .about-tile p,
+.about-tile-wrapper:hover .about-tile span,
+.about-tile-wrapper:hover .about-tile-label {
+  color: #D9D9D9;
+}
+
+.about-tile-wrapper:hover .about-social-icon,
+.about-tile-wrapper:hover .about-intro-icon {
+  color: #D9D9D9;
+  fill: #D9D9D9;
+  stroke: #D9D9D9;
+}
+
+
+/* Tile principal */
+.about-intro-wrapper {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.about-intro {
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 18px;
+  text-align: left;
+}
+
+.about-intro-icon {
+  width: 42px;
+  height: 42px;
+}
+
+.about-intro h2 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.about-intro p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* Redes sociales */
+.about-social-tile {
+  min-height: 130px;
+  cursor: pointer;
+}
+
+.about-social-icon {
+  width: 38px;
+  height: 38px;
+}
+
+.about-social-tile span {
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Tile de especialidades */
+.about-focus-wrapper {
+  grid-column: span 2;
+}
+
+.about-focus {
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.about-focus-label {
+  margin-bottom: 6px;
+  font-size: 12px;
+  letter-spacing: 3px;
+  opacity: 0.7;
+}
+
+.about-focus h3 {
+  margin: 0;
+  font-size: 21px;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .about-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .about-intro-wrapper {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+}
+
+@media (max-width: 650px) {
+  .about {
+    gap: 30px;
+    margin: 40px 0;
+  }
+
+  .about-title h1 {
+    font-size: 50px;
+  }
+
+  .about-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: minmax(120px, auto);
+    gap: 16px;
+  }
+
+  .about-intro-wrapper {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+
+  .about-intro {
+    padding: 22px;
+  }
+
+  .about-intro h2 {
+    font-size: 24px;
+  }
+
+  .about-intro p {
+    font-size: 14px;
+  }
+
+  .about-focus-wrapper {
+    grid-column: span 2;
+  }
+
+  .about-tile {
+    padding: 16px;
+  }
+
+  .about-social-icon {
+    width: 32px;
+    height: 32px;
+  }
 }

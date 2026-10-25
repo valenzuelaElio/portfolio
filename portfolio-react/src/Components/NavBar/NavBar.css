@@ -1,84 +1,426 @@
-.navbar{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 20px 170px;
+.navbar-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 60px;
+  max-width: 300px;
+
+  transition: width 250ms ease;
+  position: relative;
+  z-index: 10;
 }
-.nav-menu{
-    display: flex;
-    align-items: center;
-    list-style: none;
-    gap: 60px;
-    font-size: 20px;
+
+/* Expandir la navbar */
+.navbar-vertical:hover {
+  width: 300px;
 }
-.nav-connect{
-    padding: 20px 40px;
-    border-radius: 50px;
-    background: linear-gradient(267deg, #2AF598 0.36%, #08B3E5 102.06%);
-    font-size: 22px;
-    cursor: pointer;
-    transition: 0.2s;
+
+.navbar-vertical h2 {
+  margin: 0 0 12px;
+  font-size: 1.4rem;
 }
-.nav-connect:hover{
-    transform: scale(1.05);
+
+.navbar-vertical ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
-.nav-menu li{
+
+.navbar-vertical li {
+  position: relative;
+  width: 100%;
+}
+
+/* Sombra fija detrás del botón */
+.navbar-vertical li::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: #D9D9D9;
+  border: 2px solid #D9D9D9;
+
+}
+
+/* Estilo base del botón */
+.navbar-vertical a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  padding: 12px 16px;
+  width: 100%;
+
+  background-color: transparent;
+  border: 2px solid #d9d9d900;
+
+  text-decoration: none;
+  font-weight: 600;
+  white-space: nowrap;
+
+  transform: translate(0, 0);
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease;
+
+}
+
+/* Al pasar el cursor */
+.navbar-vertical a:hover {
+  background-color: #6A5351;
+  border: 2px solid #d9d9d900;
+  /*color: #FAFAFA;*/
+  transform: translate(8px, -8px);
+}
+
+/* Botón seleccionado */
+.navbar-vertical a.active {
+  background-color: #6A5351;
+  border: 2px solid #d9d9d900;
+  color: #FAFAFA;
+  transform: translate(8px, -8px);
+}
+
+/* Al presionarlo */
+.navbar-vertical a:active {
+  transform: translate(10px, -10px);
+}
+
+/* Iconos */
+.navbar-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+/* Texto oculto por defecto */
+.navbar-label {
+  display: inline-block;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 180ms ease;
+  color: #6A5351; /* Café oscuro */
+}
+
+/* Mostrar texto al expandir */
+.navbar-vertical:hover .navbar-label {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 80ms;
+  color: #6A5351; /* Sigue oscuro por defecto */
+}
+
+/* Texto claro al pasar el cursor por el botón */
+.navbar-vertical a:hover .navbar-label {
+  color: #D9D9D9;
+}
+
+/* Texto claro mientras el botón esté activo */
+.navbar-vertical a.active .navbar-label {
+  color: #D9D9D9;
+}
+
+/* =========================================
+   SELECTOR DE IDIOMA
+   ========================================= */
+
+.navbar-language-switcher {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.navbar-language-switcher button {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 36px;
+  min-width: 36px;
+  max-width: 36px;
+  height: 36px;
+  min-height: 36px;
+  max-height: 36px;
+  flex: 0 0 36px;
+
+  padding: 0;
+  border: 2px solid #D9D9D9;
+  border-radius: 0;
+
+  background-color: #D9D9D9;
+  color: #372F2F;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+
+  cursor: pointer;
+  transform: none;
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+.navbar-language-switcher button:hover,
+.navbar-language-switcher button.active {
+  background-color: #372F2F;
+  color: #D9D9D9;
+  transform: none;
+}
+
+/* ===========================================================================
+   VERSIÓN MÓVIL
+   =========================================================================== */
+@media (max-width: 768px) {
+  .navbar-vertical {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    max-width: none;
+    height: auto;
+
     display: flex;
     flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-}
-.nav-menu li img{
-    display: flex;
-    margin: auto;
-}
-.anchor-link{
-    text-decoration: none;
-    color: white;
-}
-.nav-mob-close{
-    display: none;
-}
-.nav-mob-open{
-    display: none;
-}
-@media(max-width:768px){
-    .navbar{
-        margin: 20px 50px;
-    }
-    .nav-connect{
-        display: none;
-    }
-    .nav-mob-open{
-        display: block;
-        position: fixed;
-        right: 30px;
-    }
-    .nav-mob-close{
-        display: block;
-        position: relative;
-        top: 30px;
-        left: 290px;
-        width: 30px;
-    }
-    .nav-menu{
-        position: fixed;
-        flex-direction: column;
-        align-items: start;
-        top: 0;
-        gap: 30px;
-        background-color: #1f0016;
-        width: 350px;
-        height: 100%;
-        z-index: 2;
-        transition: right 0.5s;
-        right: -350px;
-    }
-    .nav-menu li{
-        font-size: 30px;
-        padding-left: 100px;
-        flex-direction: row;
-        gap: 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
 
-    }
+    padding: 10px 8px;
+    box-sizing: border-box;
+
+    background-color: transparent;
+    z-index: 1000;
+
+    transform: scale(1);
+    transform-origin: center bottom;
+    transition: transform 200ms ease;
+
+  }
+
+  .navbar-vertical:hover {
+    width: 100%;
+  }
+
+  /* Distribución horizontal */
+  .navbar-vertical ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 80%;
+    gap: 10px;
+
+    transition: gap 200ms ease;
+  }
+
+  .navbar-vertical li {
+    flex: 1;
+    width: auto;
+    min-width: 0;
+  }
+
+  /* Botones solo con iconos */
+  .navbar-vertical a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    padding: 10px 4px;
+    box-sizing: border-box;
+
+    transform: none;
+
+    transition:
+      transform 180ms ease,
+      background-color 180ms ease,
+      color 180ms ease,
+      padding 200ms ease;
+  }
+
+  /* Mantener el fondo del botón activo */
+  .navbar-vertical a:hover,
+  .navbar-vertical a.active {
+    background-color: #6A5351;
+    color: #FAFAFA;
+  }
+
+  /* Ocultar todos los textos */
+  .navbar-vertical .navbar-label {
+    display: none;
+  }
+
+  /* Tamaño de los iconos */
+  .navbar-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* Desactivar la expansión de textos */
+  .navbar-vertical:hover .navbar-label {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  /* Mantener las sombras detrás de cada botón */
+  .navbar-vertical li::before {
+    inset: 0;
+  }
+
+  /* Reservar espacio para que la barra no tape el contenido */
+  body {
+    padding-bottom: 80px;
+  }
+
+  /* Cada botón conserva su sombra fija */
+  .navbar-vertical li {
+    position: relative;
+    flex: 1;
+    min-width: 0;
+  }
+
+  /* Sombra gris detrás del botón */
+  .navbar-vertical li::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: #D9D9D9;
+    border: 2px solid #D9D9D9;
+  }
+
+  /* Botón sobre la sombra */
+  .navbar-vertical a {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    padding: 10px 4px;
+    box-sizing: border-box;
+
+    transform: translate(0, 0);
+  }
+
+  /* Efecto de desplazamiento al pasar el cursor */
+  .navbar-vertical a:hover {
+    background-color: #6A5351;
+    color: #FAFAFA;
+    transform: translate(4px, -4px);
+  }
+
+  /* El botón activo mantiene su desplazamiento */
+  .navbar-vertical a.active {
+    background-color: #6A5351;
+    color: #FAFAFA;
+    transform: translate(4px, -4px);
+  }
+
+  /* Efecto al presionar */
+  .navbar-vertical a:active {
+    transform: translate(6px, -6px);
+  }
+
+  .navbar-vertical a {
+    transition:
+      transform 180ms ease,
+      background-color 180ms ease,
+      color 180ms ease,
+      padding 200ms ease;
+  }
+
+  .navbar-vertical .navbar-icon {
+    transition:
+      width 200ms ease,
+      height 200ms ease;
+  }
+
+  /* Estado compacto: scroll hacia abajo */
+  .navbar-vertical.navbar-compact {
+    transform: scale(0.80);
+    transform-origin: center bottom;
+  }
+
+  /* No incluir los idiomas en la barra inferior */
+  .navbar-vertical .navbar-language-switcher {
+    display: none;
+  }
+
+  /* Los seis iconos distribuyen el espacio disponible */
+  .navbar-vertical ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 100%;
+    gap: 8px;
+  }
+
+  .navbar-vertical li {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .navbar-vertical a {
+    min-width: 0;
+    padding: 10px 4px;
+  }
+
+  /* Mantener el efecto de desplazamiento en móvil */
+  .navbar-vertical a:hover,
+  .navbar-vertical a.active {
+    transform: translate(4px, -4px);
+  }
+
+  .navbar-vertical a:active {
+    transform: translate(6px, -6px);
+  }
+
+  /* Selector de idioma: fila superior */
+  .navbar-vertical .navbar-language-switcher {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  /* Mantener los botones cuadrados */
+  .navbar-vertical .navbar-language-switcher button {
+    display: flex;
+    width: 36px;
+    min-width: 36px;
+    max-width: 36px;
+    height: 36px;
+    min-height: 36px;
+    max-height: 36px;
+    flex: 0 0 36px;
+
+    padding: 0;
+    transform: none;
+  }
 }
+

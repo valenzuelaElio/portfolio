@@ -1,35 +1,94 @@
-import React from 'react'
-import './Hero.css'
-import profile_img from '../../assets/profile.png'
-import AnchorLink from 'react-anchor-link-smooth-scroll'
 
-import { useTranslation } from "react-i18next";
+import React from 'react';
+import './Hero.css';
+
+import HeroTile from '../../Components/HeroTile/HeroTile';
+import profile from '../../assets/personal/profile.svg';
+import logo from '../../assets/personal/logo_dark.svg';
+
+const tiles = [
+  { 
+    id: 8, title: {
+      'es' : "Game developer",
+      'en' : "Game developer"
+    }, 
+    size: 'tile-1x1', hoverMode: 'color'
+  },
+  { 
+    id: 2, size: 'tile-1x1', title: {
+      'es' : "Elio Valenzuela",
+      'en' : "Elio Valenzuela"
+    }, 
+  },
+  {
+    id: 3, size: 'tile-1x1', hoverMode: 'none', type: 'gallery', media : ['src/assets/projects/tormented-souls-2/ts2_video.gif'], hoverText: 'Ver mas'
+  },
+  { 
+    id: 4, title: '', size: 'tile-2x1', 
+    
+    display: 'cover',
+    hoverMode: 'none',
+  },
+  {
+    id: 5, type: 'image', image: profile, size: 'tile-2x2', hoverMode : "replace", hoverText : '"La vida es muy corta para no hacer lo que amas"', quoteOnHover: true,
+  },
+  { 
+    id: 6, title: 'Habilidades', size: 'tile-2x1', 
+    type: 'gallery',
+    media: [
+      'src/assets/projects/tormented-souls-2/ts2_thumbnail.webp',
+      'src/assets/projects/id-machina/id-machina-1.jpg',
+      'src/assets/projects/daybreak-slam/dbs-cover.jpg'
+    ],
+    display: 'cover',
+    hoverMode: 'none',
+  },
+  {
+    id: 7,
+    type: 'stat',
+    number: '8+',
+    title: {
+      'es' : "años de experiencia",
+      'en' : "years of experience"
+    },
+    size: 'tile-1x1',
+    
+  },
+  {
+    id: 1, size: 'tile-1x1',
+    type: 'stat',
+    number: '⬇',
+    title: {
+      'es' : 'Ver mas',
+      'en' : 'See more'
+    }, hoverMode: 'none', hoverText: 'Ver mas ⬇'
+  },
+  { 
+    id: 9, size: 'tile-2x1', type: 'stat',
+    number: '5+',
+    title: {
+      'es' : "años en la industria chilena",
+      'en' : "years in the chilean industry"
+    },
+    hoverMode: 'none',
+    hoverText: 'Videojuegos\nApps\nDiseño\nEducacion'
+  },
+];
 
 const Hero = () => {
-
-  const { t } = useTranslation();
-
-  const handleDownload = () => {
-    const link = document.createElement("a");
-    link.href = "Elio_Valenzuela_CV.pdf"; // ruta dentro de tu carpeta public o assets
-    link.download = "Elio_Valenzuela_CV.pdf";   // nombre del archivo al guardar
-    link.click();
-  };
-
   return (
-    <div id='home' className='hero'>
-        <img src={profile_img} alt="" />
-        <h1><span>{t("Hero_Me")}</span> {t("Hero_Me2")}</h1>
-        <p>{t("Hero_para")}</p>
-        <div className="hero-action">
-
-            <div className="hero-connect"><AnchorLink className='anchor-link' offset={50} href='#contact'>{t("NavBar_ContactMe")}</AnchorLink></div>
-            <div onClick={handleDownload} className="hero-resume">{t("Hero_cv")}</div>
-
+    <section id="home" className="home-section">
+      <div className="home-grid-container">
+        <div className="home-grid">
+          {tiles.map((tile) => (
+              <div key={tile.id} className={`home-tile ${tile.size}`}>
+                <HeroTile {...tile} />
+              </div>
+          ))}
         </div>
+      </div>
+    </section>
+  );
+};
 
-    </div>
-  )
-}
-
-export default Hero
+export default Hero;

@@ -1,0 +1,51 @@
+.platform-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 7px 12px;
+
+  background-color: #372F2F;
+  color: #D9D9D9 !important;
+
+  font-size: 0.85rem;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+
+  transition:
+    background-color 200ms ease,
+    color 200ms ease,
+    border-color 200ms ease;
+}
+
+a.platform-pill,
+a.platform-pill:visited,
+a.platform-pill:hover,
+a.platform-pill:active {
+  color: #D9D9D9 !important;
+}
+
+.platform-pill,
+.platform-pill span {
+  color: #D9D9D9;
+}
+
+a.platform-pill:hover,
+a.platform-pill:hover span {
+  color: #FFFFFF;
+}
+
+a.platform-pill:hover {
+  background-color: #847977;
+  border-color: #847977;
+  color: #FFFFFF !important;
+}
+
+.platform-pill-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+

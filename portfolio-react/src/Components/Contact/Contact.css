@@ -1,153 +1,403 @@
-.contact{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 80px;
-    margin: 80px 170px;
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+  margin: 80px 0;
+  color: #372F2F;
 }
-.contact-title{
-    position: relative;
+
+.contact-title h1 {
+  margin: 0;
+  font-size: 80px;
+  font-weight: 600;
+
+  color: #D9D9D9;
+  text-align: center;
 }
-.contact-title h1{
-    padding: 0px 30px;
-    font-size: 80px;
-    font-weight: 600;
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  align-items: stretch;
 }
-.contact-title img{
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    z-index: -1;
+
+/* Tarjetas y sombras */
+
+.contact-card-wrapper {
+  position: relative;
+  min-width: 0;
+  height: 100%;
 }
-.contact-section{
-    display: flex;
-    gap: 150px;
+
+.contact-card-shadow {
+  position: absolute;
+  inset: 0;
+  background-color: #D9D9D9;
 }
-.contact-left{
-    display: flex;
-    flex-direction: column;
+
+.contact-card {
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 32px;
+  background-color: #D9D9D9;
+  color: #372F2F;
+  border: none;
+  border-radius: 0;
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+.contact-card-wrapper:hover .contact-card {
+  transform: translate(8px, -8px);
+  background-color: #6A5351;
+  color: #D9D9D9;
+}
+
+.contact-card-wrapper:hover .contact-card,
+.contact-card-wrapper:hover .contact-card h2,
+.contact-card-wrapper:hover .contact-card p,
+.contact-card-wrapper:hover .contact-card span,
+.contact-card-wrapper:hover .contact-card label,
+.contact-card-wrapper:hover .contact-card a,
+.contact-card-wrapper:hover .contact-availability{
+  color: #D9D9D9;
+}
+
+.contact-card-wrapper:hover .contact-card input,
+.contact-card-wrapper:hover .contact-card textarea {
+  color: #D9D9D9;
+  border-color: #D9D9D9;
+}
+
+/* Información */
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.contact-eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  opacity: 0.7;
+}
+
+.contact-info h2,
+.contact-form-heading h2 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.contact-description {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+  margin-top: 12px;
+}
+
+.contact-detail {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+  color: inherit;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.contact-detail svg {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+}
+
+a.contact-detail:hover {
+  opacity: 0.7;
+}
+
+.contact-availability {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 32px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.contact-status-dot {
+  width: 9px;
+  height: 9px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background-color: #47875B;
+}
+
+/* Formulario */
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 22px;
+}
+
+.contact-form-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 4px;
+}
+
+.contact-form-heading h2 {
+  font-size: 28px;
+}
+
+.contact-form-heading svg {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.contact-field {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.contact-field label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.contact-field input,
+.contact-field textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid #372F2F;
+  border-radius: 0;
+  outline: none;
+  background-color: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 14px;
+  transition:
+    border-color 180ms ease,
+    background-color 180ms ease;
+}
+
+.contact-field input::placeholder,
+.contact-field textarea::placeholder {
+  color: currentColor;
+  opacity: 0.6;
+}
+
+.contact-field input:focus,
+.contact-field textarea:focus {
+  border-color: #6A5351;
+  background-color: rgb(255 255 255 / 8%);
+}
+
+.contact-field textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+/* Botón con sombra fija */
+
+.contact-submit-wrapper {
+  position: relative;
+  margin-top: 4px;
+}
+
+.contact-submit-shadow {
+  position: absolute;
+  inset: 0;
+  background-color: #6A5351;
+}
+
+.contact-submit {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 0;
+  background-color: #6A5351;
+  color: #D9D9D9;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+.contact-submit-wrapper:hover .contact-submit:not(:disabled) {
+  transform: translate(8px, -8px);
+  background-color: #D9D9D9;
+  color: #6A5351;
+}
+
+.contact-submit:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.contact-submit svg {
+  width: 16px;
+  height: 16px;
+}
+
+.contact-result {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.contact-result.success {
+  color: #47875B;
+}
+
+.contact-result.error {
+  color: #B33A3A;
+}
+
+/* Responsive */
+
+@media (max-width: 1000px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-card-wrapper {
+    height: auto;
+  }
+
+  .contact-title h1 {
+    font-size: 64px;
+  }
+
+  .contact-info,
+  .contact-form {
+    min-height: 0;
+  }
+
+  .contact-availability {
+    margin-top: 12px;
+  }
+}
+
+@media (max-width: 650px) {
+  .contact {
     gap: 30px;
+    margin: 40px 0;
+  }
+
+  .contact-title h1 {
+    font-size: 48px;
+  }
+
+  .contact-card {
+    padding: 22px;
+  }
+
+  .contact-info h2,
+  .contact-form-heading h2 {
+    font-size: 25px;
+  }
+
+  .contact-description {
+    font-size: 14px;
+  }
 }
-.contact-left h1{
-    font-size: 80px;
-    font-weight: 700;
-    background: linear-gradient(270deg, #2AF598 10%, #08B3E5 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+
+/* Color de texto e iconos al hacer hover en la tarjeta */
+.contact-card-wrapper:hover .contact-card,
+.contact-card-wrapper:hover .contact-card h2,
+.contact-card-wrapper:hover .contact-card p,
+.contact-card-wrapper:hover .contact-card span,
+.contact-card-wrapper:hover .contact-card label,
+.contact-card-wrapper:hover .contact-card a,
+.contact-card-wrapper:hover .contact-card svg {
+  color: #D9D9D9;
 }
-.contact-left p{
-    max-width: 550px;
-    color: #d8d8d8;
-    font-size: 20px;
-    line-height: 35px;
+
+/* Iconos SVG */
+.contact-card-wrapper:hover .contact-card svg {
+  stroke: #D9D9D9;
 }
-.contact-details{
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    color: #d8d8d8;
-    font-size: 22px;
+
+/* Campos del formulario */
+.contact-card-wrapper:hover .contact-card input,
+.contact-card-wrapper:hover .contact-card textarea {
+  color: #D9D9D9;
+  border-color: #D9D9D9;
 }
-.contact-detail{
-    display: flex;
-    align-items: center;
-    gap: 20px;
+
+.contact-card-wrapper:hover .contact-card input::placeholder,
+.contact-card-wrapper:hover .contact-card textarea::placeholder {
+  color: #D9D9D9;
 }
-.contact-right{
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    gap: 30px;
+
+/* Botón del formulario: fondo claro para contrastar */
+.contact-card-wrapper:hover .contact-submit {
+  background-color: #D9D9D9;
+  color: #372F2F;
 }
-.contact-right label{
-    color: #d8d8d8;
-    font-size: 22px;
-    font-weight: 500;
+
+/* Icono del botón */
+.contact-card-wrapper:hover .contact-submit svg {
+  stroke: #372F2F;
 }
-.contact-right input{
-    border: none;
-    width: 700px;
-    height: 78px;
-    padding-left: 20px;
-    border-radius: 4px;
-    background: #32323c;
-    color: #a0a0a0;
-    font-family: Outfit;
-    font-size: 20px;
+
+/* Sombra del botón */
+.contact-card-wrapper:hover .contact-submit-shadow {
+  background-color: #372F2F;
 }
-.contact-right textarea{
-    width: 650px;
-    border: none;
-    padding: 25px;
-    border-radius: 4px;
-    background: #32323c;
-    color: #a0a0a0;
-    font-family: Outfit;
-    font-size: 20px;
+
+/* Cambiar el color de todos los iconos SVG al hacer hover */
+.contact-card-wrapper:hover .contact-card svg {
+  color: #D9D9D9;
+  stroke: #D9D9D9;
+  fill: #D9D9D9;
 }
-.contact-submit{
-    border: none;
-    color: white;
-    border-radius: 50px;
-    background: linear-gradient(270deg, #2AF598 10%, #08B3E5 100%);
-    font-size: 22px;
-    padding: 20px 60px;
-    margin-bottom: 50px;
-    cursor: pointer;
-    transition: 0.3s;
+
+/* Mantener transparente el interior de iconos lineales */
+.contact-card-wrapper:hover .contact-card svg [fill="none"] {
+  fill: none;
 }
-.contact-submit:hover{
-    transform: scale(1.1);
-    transition: 0.3s;
-}
-@media(max-width:768px){
-    .contact{
-        gap: 80px;
-        margin: 50px 70px;
-        align-items: start;
-    }
-    .contact-title h1{
-        padding: 0;
-        font-size: 50px;
-        font-weight: 600;
-    }
-    .contact-title img{
-        width: 280px;
-        margin: -10px;
-    }
-    .contact-section{
-        flex-direction: column;
-    }
-    .contact-left hr{
-        font-size: 54px;
-    }
-    .contact-left h1{
-        font-size: 60px;
-    }
-    .contact-left p{
-        font-size: 18px;
-    }
-    .contact-detail{
-        gap: 20px;
-    }
-    .contact-detail img{
-        width: 25px;
-    }
-    .contact-right label{
-        font-size: 20px;
-    }
-    .contact-right input{
-        width: 100%;
-        font-size: 20px;
-    }
-    .contact-right textarea{
-        width: 95%;
-        font-size: 20px;
-    }
-    .contact-submit{
-        font-size: 20px;
-        padding: 15px 40px;
-    }
+
+/* El icono del botón debe contrastar con el fondo claro */
+.contact-card-wrapper:hover .contact-submit svg {
+  color: #372F2F;
+  stroke: #372F2F;
+  fill: #372F2F;
 }

@@ -1,0 +1,24 @@
+.interactive-grid {
+  --grid-size: 25px;
+
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      rgba(217, 217, 217, 0.09) 0px,
+      rgba(217, 217, 217, 0.09) 1px,
+      transparent 1px,
+      transparent var(--grid-size)
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(217, 217, 217, 0.09) 0px,
+      rgba(217, 217, 217, 0.09) 1px,
+      transparent 1px,
+      transparent var(--grid-size)
+    );
+}
