@@ -21,7 +21,7 @@ const tiles = [
     }, 
   },
   {
-    id: 3, size: 'tile-1x1', hoverMode: 'none', type: 'gallery', media : ['src/assets/projects/tormented-souls-2/ts2_video.gif'], hoverText: 'Ver mas'
+    id: 3, size: 'tile-1x1', hoverMode: 'none', type: 'gallery', media : ['../../assets/projects/tormented-souls-2/ts2_video.gif'], hoverText: 'Ver mas'
   },
   { 
     id: 4, title: '', size: 'tile-2x1', 
@@ -36,9 +36,9 @@ const tiles = [
     id: 6, title: 'Habilidades', size: 'tile-2x1', 
     type: 'gallery',
     media: [
-      'src/assets/projects/tormented-souls-2/ts2_thumbnail.webp',
-      'src/assets/projects/id-machina/id-machina-1.jpg',
-      'src/assets/projects/daybreak-slam/dbs-cover.jpg'
+      '../../assets/projects/tormented-souls-2/ts2_thumbnail.webp',
+      '../../assets/projects/id-machina/id-machina-1.jpg',
+      '../../assets/projects/daybreak-slam/dbs-cover.jpg'
     ],
     display: 'cover',
     hoverMode: 'none',

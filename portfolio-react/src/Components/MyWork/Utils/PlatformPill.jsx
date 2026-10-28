@@ -2,11 +2,11 @@
 import './PlatformPill.css';
 
 const platformIcons = {
-    Steam: 'src/assets/icons/Platforms/Icon_Steam.svg',
-    GOG: 'src/assets/icons/Platforms/icon_gog.svg',
-    'itch.io': 'src/assets/icons/Platforms/icon_itchio.svg',
-    Windows : 'src/assets/icons/Platforms/icon_windows.svg',
-    WebGL : 'src/assets/icons/Platforms/icon_webgl.svg'
+    Steam: '../../assets/icons/Platforms/Icon_Steam.svg',
+    GOG: '../../assets/icons/Platforms/icon_gog.svg',
+    'itch.io': '../../assets/icons/Platforms/icon_itchio.svg',
+    Windows : '../../assets/icons/Platforms/icon_windows.svg',
+    WebGL : '../../assets/icons/Platforms/icon_webgl.svg'
 };
 
 const PlatformPill = ({ platform, href }) => {
